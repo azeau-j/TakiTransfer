@@ -1,0 +1,4 @@
+storage_system = "fs"
+
+[storage_system_config]
+directory_path = "/var/takitransfer/datas/"

@@ -1,0 +1,56 @@
+version: "3.9"
+
+services:
+  taki-transfer-back:
+    image: takitransfer:0.0.1
+    build: apps/backend
+    restart: unless-stopped
+    networks:
+      - taki-transfer_network
+    environment:
+      - DATABASE_HOST=taki-transfer-db
+      - DATABASE_NAME=takitransfer-local-db
+      - DATABASE_PASSWORD=Password1234
+      - DATABASE_PORT=5432
+      - DATABASE_USER=postgres
+    volumes:
+      - taki-transfer-files:/var/takitransfer/datas/
+    ports:
+      - "8080:8080"
+  taki-transfer-front:
+    image: takitransfer-front:0.0.1
+    build: apps/frontend
+    restart: unless-stopped
+    networks:
+      - taki-transfer_network
+    environment:
+      - PUBLIC_API_BASE_URL=http://localhost:8080
+    ports:
+      - "3000:3000"
+  taki-transfer-db:
+    image: postgres:15.2-alpine
+    restart: unless-stopped
+    networks:
+      - taki-transfer_network
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Password1234
+      - POSTGRES_DB=takitransfer-local-db
+    volumes:
+      - taki-transfer-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "sh -c 'pg_isready -u postgres -d takitransfer-local-db",
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  taki-transfer-db-data:
+  taki-transfer-files:
+
+networks:
+  taki-transfer_network:
