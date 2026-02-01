@@ -21,7 +21,6 @@ The project is fully containerized with Docker, allowing easy setup and deployme
 - Docker Compose
 
 ## 🚀 Getting started:
-For the moment, there is no images online, you will have to build them locally
 
 ### Clone the repository:
 
@@ -42,7 +41,7 @@ Once the containers are running, you can access the TakiTransfer web interface b
 ```
 http://localhost:3000
 ```
-
+Check out the [wiki](https://github.com/azeau-j/TakiTransfer/wiki/Getting-Started) for more information.
 
 ## 🤝 Contributing
 Check out the [Contributing Guide](CONTRIBUTING.md) for more information.
