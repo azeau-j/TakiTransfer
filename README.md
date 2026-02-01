@@ -1,3 +1,4 @@
+[![CI/CD Pipeline](https://github.com/azeau-j/TakiTransfer/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/azeau-j/TakiTransfer/actions/workflows/ci-cd.yml)
 # TakiTransfer
 
 TakiTransfer is an open-source, self-hostable alternative to popular file-sharing services like WeTransfer.

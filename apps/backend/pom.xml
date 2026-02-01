@@ -11,7 +11,7 @@
 
     <groupId>com.azeauj</groupId>
     <artifactId>takitransfer-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>takitransfer-parent</name>
     <packaging>pom</packaging>
 

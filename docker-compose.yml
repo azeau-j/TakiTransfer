@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   taki-transfer-back:
-    image: takitransfer:0.0.1
+    image: takitransfer:latest
     build: apps/backend
     restart: unless-stopped
     networks:
@@ -18,7 +18,7 @@ services:
     ports:
       - "8080:8080"
   taki-transfer-front:
-    image: takitransfer-front:0.0.1
+    image: takitransfer-front:latest
     build: apps/frontend
     restart: unless-stopped
     networks:
